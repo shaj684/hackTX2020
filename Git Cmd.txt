@@ -1,0 +1,27 @@
+https://rogerdudler.github.io/git-guide/
+cd C:\Users\garys\source\repos				// saved repos, must be in the repo to commit, push, etc
+
+git 							// command here
+-------
+init
+add README.md 						// markdown language #header name, then some description
+
+status
+add .
+commit -m 'first commit'
+remote add origin main					// adding main to remote repo
+
+clone github url
+push 							// do this for first time: -u origin main
+pull
+
+-------
+config --global user.email 'email here'			// there is also user.name
+rm --cached 						// file name.ext
+
+touch .gitignore 					//go to editor and add log.txt or /dir for folders or *.txt for all text files
+touch log.txt
+
+branch 							//name of branch
+checkout 						//name of branch or master
+merge 							//name of branch //you have to be in master to merge
