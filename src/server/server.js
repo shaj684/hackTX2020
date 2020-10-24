@@ -12,7 +12,7 @@ require('dotenv').config();
 app.set('view engine', 'ejs');
 
 // PORT
-const PORT = 3000;
+const PORT = 5000;
 
 /* ----------   SESSION SETUP   ---------- */
 
