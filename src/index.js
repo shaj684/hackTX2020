@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { SignInSide } from 'react';
+
 
 class Hello extends React.Component {
   render() {
