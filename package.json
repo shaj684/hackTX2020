@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/shaj684/hackTX2020#readme",
   "dependencies": {
-    "chalk": "^4.1.0"
+    "chalk": "^4.1.0",
+    "react": "^17.0.1"
   }
 }
