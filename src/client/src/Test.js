@@ -18,9 +18,9 @@ function Test() {
 
   return (
     <div className="App">
-     <signIn></signIn>
+     hello.
     </div>
   );
 }
 
-export default App;
+export default Test;

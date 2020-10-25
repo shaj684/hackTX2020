@@ -3,25 +3,41 @@ const Schema = mongoose.Schema;
 
 const accountSchema = new Schema(
   {
-    firstname: {
+    name: {
       type: String,
       required: true,
     },
-    lastname: {
+    age: {
+      type: Number,
+      required: true,
+    },
+    email: {
       type: String,
       required: true,
     },
-    position: {
-      type: Object,
+    phoneNumber: {
+      type: Number,
       required: true,
     },
-    university: {
+    pastPosition: {
       type: String,
-      required: false,
+      required: true,
     },
-    profilePic: {
+    homeOwner: {
+      type: Boolean,
+      required: true,
+    },
+    timeframe: {
+      type: Number,
+      required: true,
+    },
+    brigg: {
       type: String,
-      required: false,
+      required: true,
+    },
+    foodStamps: {
+      type: Boolean,
+      required: true,
     },
     username: {
       type: String,

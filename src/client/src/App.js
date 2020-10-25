@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import logo from "./react-logo.svg";
 import nodejsLogo from "./nodejs-logo.svg";
 import "./App.css";
-import {signIn} from "./signIn.js";
 
 function App() {
   const [users, setUsers] = useState([]);
