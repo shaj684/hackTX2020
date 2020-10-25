@@ -14,5 +14,5 @@
     "npm": ">=6.13.4"
   },
   "devDependencies": {},
-  "secure":false
+  "secure": false
 }

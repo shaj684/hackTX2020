@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import logo from "./react-logo.svg";
 import nodejsLogo from "./nodejs-logo.svg";
 import "./App.css";
-
+import Test from "./NavBar/Navbar"
+import Navbar from "./NavBar/Navbar";
 function App() {
   const [users, setUsers] = useState([]);
 
@@ -14,11 +15,16 @@ function App() {
     return () => {};
   }, []); // empty 2nd arg - only runs once
 
-  return (
-    <div className="App">
-     hello there.
-    </div>
-  );
+  
+    return( 
+      <div className="App"> 
+      <Navbar />
+      </div>
+    )
+
+  
+
+
 }
 
 export default App;
