@@ -6,12 +6,12 @@ export const MenuItems = [
     },
     {
         title: 'Resources', 
-        url: '#', 
+        url: 'resources', 
         cName: 'nav-links',
     },
     {
         title: 'Matchmaking', 
-        url: 'matchmaking', 
+        url: 'matchMaking', 
         cName: 'nav-links',
     },
     {
