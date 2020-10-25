@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Axios from 'Axios';
 import "./App.css";
 import Navbar from "./NavBar/Navbar";
 import Login from "./Login";
@@ -11,6 +12,7 @@ function App() {
   const [registerPassword, setRegisterPassword] = useState("");
   const [loginUsername, setloginUsername] = useState("");
   const [loginPassword, setloginPassword] = useState("");
+  const [data, setData] = useState(null);
 
   const register = () => {
     Axios({
