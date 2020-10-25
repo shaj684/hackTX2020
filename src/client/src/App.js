@@ -40,8 +40,9 @@ function App() {
       <Router>
         <div className="App"> 
           <Navbar />
-          <MatchingCard /> 
-          <Switch>
+          
+          <Switch> 
+             <Route path="/matchMaking" component={MatchingCard}/> 
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
