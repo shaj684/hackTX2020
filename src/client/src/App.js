@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Axios from 'Axios';
+import Axios from 'axios';
 import "./App.css";
 import Navbar from "./NavBar/Navbar";
 import Login from "./Login";
