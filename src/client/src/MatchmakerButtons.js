@@ -26,13 +26,6 @@ import Axios from 'axios';
                   withCredentials: true,
                   url: "http://localhost:5000/matchMaking",
                 }).then((res) => this.data = {name: res.name, age: res.age, profession: res.pastProfession});
-
-                Axios({
-                    method: "POST",
-                    data:{choice:false},
-                    withCredentials: true,
-                    url: "http://localhost:5000/matchMaking",
-                }).then((res) => this.data = {name: res.name, age: res.age, profession: res.pastProfession});
                 console.log(this.data);
             }}>
                 
@@ -49,12 +42,6 @@ import Axios from 'axios';
                   url: "http://localhost:5000/matchMaking",
                 }).then((res) => this.data = {name: res.name, age: res.age, profession: res.pastProfession});
 
-                Axios({
-                    method: "POST",
-                    data:{choice:false},
-                    withCredentials: true,
-                    url: "http://localhost:5000/matchMaking",
-                }).then((res) => this.data = {name: res.name, age: res.age, profession: res.pastProfession});
                 console.log(this.data);
             }}>
                 
