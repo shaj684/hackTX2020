@@ -9,8 +9,9 @@ const DB_AUTH_NAME = process.env.DB_NAME;
 
 // connect to DB
 const DB_URI = `mongodb+srv://${DB_AUTH_USER}:${DB_AUTH_PW}@cluster0.yp0on.mongodb.net/${DB_AUTH_NAME}?retryWrites=true&w=majority`;
+const DB_URI2 = `mongodb+srv://${DB_AUTH_USER}:${DB_AUTH_PW}@cluster0.mutqy.mongodb.net/${DB_AUTH_NAME}?retryWrites=true&w=majority`;
 
-const conn = mongoose.createConnection(DB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+const conn = mongoose.createConnection(DB_URI2, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const Account = conn.model('Account', AccountSchema);
 
