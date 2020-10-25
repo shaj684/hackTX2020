@@ -11,7 +11,7 @@ const accountSchema = new Schema(
       type: Number,
       required: false,
     },
-    email: {
+    username: {
       type: String,
       required: true,
     },
@@ -39,7 +39,7 @@ const accountSchema = new Schema(
       type: Boolean,
       required: true,
     },
-    hash: {
+    password: {
       type: String,
       required: true,
     },

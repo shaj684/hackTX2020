@@ -1,42 +1,34 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
-const connection = require('./database');
-const Account = require('../models/account');
-const validatePassword = require('../lib/passwordUtils').validatePassword;
+const User = require("../models/account");
+const bcrypt = require("bcryptjs");
+const localStrategy = require("passport-local").Strategy;
 
-const verifyCallback = (username, password, done) => {
-  Account.findOne({ username: username })
-    .then((account) => {
-      if (!account) {
-        return done(null, false);
-      }
-
-      const isValid = validatePassword(password, account.hash, account.salt);
-
-      if (isValid) {
-        return done(null, account);
-      } else {
-        return done(null, false);
-      }
+module.exports = function (passport) {
+  passport.use(
+    new localStrategy((username, password, done) => {
+      User.findOne({ username: username }, (err, user) => {
+        if (err) throw err;
+        if (!user) return done(null, false);
+        bcrypt.compare(password, user.password, (err, result) => {
+          if (err) throw err;
+          if (result === true) {
+            return done(null, user);
+          } else {
+            return done(null, false);
+          }
+        });
+      });
     })
-    .catch((err) => {
-      console.log(err);
-      done(err);
+  );
+
+  passport.serializeUser((user, cb) => {
+    cb(null, user.id);
+  });
+  passport.deserializeUser((id, cb) => {
+    User.findOne({ _id: id }, (err, user) => {
+      const userInformation = {
+        username: user.username,
+      };
+      cb(err, userInformation);
     });
+  });
 };
-
-const strategy = new LocalStrategy(verifyCallback);
-
-passport.use(strategy);
-
-passport.serializeUser((account, done) => {
-  done(null, account.id);
-});
-
-passport.deserializeUser((accountId, done) => {
-  Account.findByIdAndDelete(accountId)
-    .then((account) => {
-      done(null, account);
-    })
-    .catch((err) => done(err));
-});

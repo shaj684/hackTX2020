@@ -1,49 +1,46 @@
 const connection = require('../config/database');
 const Account = connection.models.Account;
 const path = require('path');
-const bcrypt = require ('bcrypt');
+const bcrypt = require ('bcryptjs');
 
-const account_register_post = (req,res,next) => {
+const account_register_post = async (req,res,next) => {
   console.log('CREATING NEW USER');
   console.log(req.body);
   
-    const newAccount = new Account({
-      name: req.body.name,
-      age: req.body.age,
-      email: req.body.email,
-      phoneNumber: req.body.phoneNumber,
-      pastPosition: req.body.pastPosition,
-      homeOwner: req.body.homeOwner || false,
-      timeframe: req.body.timeframe,
-      brigg: req.body.briggs,
-      foodStamps: req.body.foodStamps || false
-    });
+  const newAccount = new Account({
+    name: req.body.name,
+    salt: 134567,
+    age: req.body.age,
+    username: req.body.email,
+    phoneNumber: req.body.phoneNumber,
+    pastPosition: req.body.pastPosition,
+    homeOwner: req.body.homeOwner || false,
+    timeframe: req.body.timeframe,
+    brigg: req.body.briggs,
+    foodStamps: req.body.foodStamps || false
+  });
   
 
-      bcrypt.genSalt(10, (err, salt) => {
-        if (err) throw err;
-        newAccount.salt = salt;
-        bcrypt.hash(req.body.password, salt, (err, hash) => {
-          if (err) throw err;
-          newAccount.hash = hash;
-          console.log("ACCOUNT INFO:");
-          console.log(newAccount);
-          newAccount
-            .save()
-            .then(user => {
-              res.redirect('/users/login');
-            })
-            .catch(err => console.log(err));
-        });
-      });
+  const hashedPassword = await bcrypt.hash(req.body.password, 10);
+
+  newAccount.password = hashedPassword;
+
+  newAccount
+  .save()
+  .then(user => {
+    res.redirect('http://localhost:3000/login');
+  })
+  .catch(err => console.log(err));
 }
 
 const account_login_post = (req,res,next) => {
-  res.redirect('/dashboard');
+  console.log("logged in")
+  res.redirect('http://localhost:3000/dashboard');
 }
 
 const match_get = (req,res,next) => {
-  Account.find({},).then((data) => {
+  Account.findOne().then((data) => {
+    console.log("HELLOHELLO")
     console.log(data);
     res.send(data);
   })

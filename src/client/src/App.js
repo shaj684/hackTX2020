@@ -25,6 +25,28 @@ function App() {
       url: "http://localhost:5000/login",
     }).then((res) => console.log(res));
   };
+
+  const getBestUser = () => {
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/user",
+    }).then((res) => {
+      setData(res.data);
+      console.log(res.data);
+    });
+  };
+
+  const checkLogin = () => {
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:5000/matchMaking/check",
+    }).then((res) => {
+      setData(res.data);
+      console.log(res.data);
+    });
+  }
   
     return( 
       <Router>

@@ -1,11 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from "react-hook-form";
+import Axios from 'axios';
 
 export default function SignIn() {
     const {register, handleSubmit, errors } = useForm();
 
     const onSubmit = (data) => {
         console.log(data);
+        Axios({
+            method: "POST",
+            data: {
+              username: data.username,
+              password: data.password,
+            },
+            withCredentials: true,
+            url: "http://localhost:5000/login",
+          }).then((res) => console.log(res));
+          console.log(data);
     }
 
     return(
