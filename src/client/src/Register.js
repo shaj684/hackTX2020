@@ -140,18 +140,12 @@ export default function SignIn() {
             <div></div>
 
             <input name="homeOwner" type="checkbox" placeholder="Homeowner?" ref={
-                register({
-                    required: "Home ownership is required",
-                })
             } />
 
             {errors.homeOwner && <p>{errors.homeOwner.message} </p>}
             <div></div>
 
             <input name="federalAid" type="checkbox" placeholder="Have you received federal assistance?" ref={
-                register({
-                    required: "This question is required",
-                })
             } />
 
             {errors.federalAid && <p>{errors.federal.message} </p>}
