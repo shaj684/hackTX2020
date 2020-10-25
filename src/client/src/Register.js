@@ -1,11 +1,54 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from "react-hook-form";
+import Axios from 'axios';
 
 export default function SignIn() {
     const {register, handleSubmit, errors } = useForm();
 
+    const [registerUsername, setRegisterUsername] = useState("");
+    const [registerPassword, setRegisterPassword] = useState("");
+    const [registerName, setRegisterName] = useState("");
+    const [registerAge, setRegisterAge] = useState(null);
+    const [registerEmail, setRegisterEmail] = useState("");
+    const [registerPhoneNumber, setRegisterPhoneNumber] = useState("");
+    const [registerPastPosition, setRegisterPastPosition] = useState("");
+    const [registerHomeOwner, setRegisterHomeOwner] = useState(false);
+    const [registerTimeframe, setRegisterTimeframe] = useState(null);
+    const [registerBriggs, setRegisterBriggs] = useState("");
+    const [registerFederalAid, setRegisterFederalAid] = useState(false);
+
     const onSubmit = (data) => {
-        console.log(data);
+        setRegisterUsername(data.username);
+        setRegisterPassword(data.password);
+        setRegisterName(data.name);
+        setRegisterAge(data.age);
+        setRegisterEmail(data.email);
+        setRegisterPhoneNumber(data.phoneNumber);
+        setRegisterPastPosition(data.pastProfession);
+        setRegisterHomeOwner(data.homeOwner);
+        setRegisterTimeframe(data.timeframe);
+        setRegisterBriggs(data.briggs);
+        setRegisterFederalAid(data.federalAid);
+
+        Axios({
+            method: "POST",
+            data: {
+              username: registerUsername,
+              password: registerPassword,
+              name:registerName,
+              age:registerAge,
+              email:registerEmail,
+              phoneNumber:registerPhoneNumber,
+              pastProfession:registerPastPosition,
+              homeOwner:registerHomeOwner,
+              timeframe:registerTimeframe,
+              briggs:registerBriggs,
+              federalAid:registerFederalAid,
+            
+            },
+            withCredentials: true,
+            url: "http://localhost:5000/register",
+          }).then((res) => console.log(res));
     }
 
     return(

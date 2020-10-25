@@ -20,7 +20,7 @@ const account_register_post = (res,req,next) => {
       pastPosition: req.body.pastPosition,
       homeOwner: req.body.homeOwner,
       timeframe: req.body.timeframe,
-      brigg: req.body.brigg,
+      brigg: req.body.briggs,
       foodStamps: req.body.foodStamps
     });
   

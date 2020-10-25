@@ -8,23 +8,9 @@ import Register from "./Register";
 import Dashboard from "./Dashboard";
 
 function App() {
-  const [registerUsername, setRegisterUsername] = useState("");
-  const [registerPassword, setRegisterPassword] = useState("");
   const [loginUsername, setloginUsername] = useState("");
   const [loginPassword, setloginPassword] = useState("");
   const [data, setData] = useState(null);
-
-  const register = () => {
-    Axios({
-      method: "POST",
-      data: {
-        username: registerUsername,
-        password: registerPassword,
-      },
-      withCredentials: true,
-      url: "http://localhost:5000/register",
-    }).then((res) => console.log(res));
-  };
 
   const login = () => {
     Axios({
