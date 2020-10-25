@@ -8,6 +8,7 @@ import DepartLabor from './DepartLabor.png';
 import Logo from './sinclair_college.jpg';
 import NYC from './nyc.png';
 
+
 const images = [
   {
     url: DepartLabor,
@@ -137,8 +138,10 @@ function Resource() {
             </Typography>
           </span>
         </ButtonBase>
-      ))}
+      ))} 
+      
         </div>
+        
   )
 
   
