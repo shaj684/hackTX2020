@@ -11,7 +11,7 @@ export const MenuItems = [
     },
     {
         title: 'Matchmaking', 
-        url: '#', 
+        url: 'matchmaking', 
         cName: 'nav-links',
     },
     {

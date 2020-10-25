@@ -139,16 +139,14 @@ export default function SignIn() {
             {errors.pastProfession && <p>{errors.pastProfession.message} </p>}
             <div></div>
 
-            <input name="homeOwner" type="checkbox" placeholder="Homeowner?" ref={
-            } />
+            <input name="homeOwner" type="checkbox" placeholder="Homeowner?"  />
 
             {errors.homeOwner && <p>{errors.homeOwner.message} </p>}
             <div></div>
 
-            <input name="federalAid" type="checkbox" placeholder="Have you received federal assistance?" ref={
-            } />
+            <input name="federalAid" type="checkbox" placeholder="Have you received federal assistance?"  />
 
-            {errors.federalAid && <p>{errors.federal.message} </p>}
+            {errors.federalAid && <p>{errors.federalAid.message} </p>}
             <div></div>
 
             <input name="timeframe" type="number" placeholder="How many weeks do you plan on staying?" ref={
