@@ -1,6 +1,12 @@
+
 .App {
   text-align: left;
 
+}
+
+.pictry{ 
+  margin-top: 200px; 
+  margin-left: 500px;
 }
 
 *{
@@ -30,7 +36,9 @@ p {
 }
 
 body {
-  background-color: #d7fffd;
+  background-image: url(pic3.png);
+  background-repeat: no-repeat;
+
 }
 
 @media (prefers-reduced-motion: no-preference) {
