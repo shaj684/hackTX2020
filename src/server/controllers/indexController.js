@@ -1,5 +1,6 @@
 const connection = require('../config/database');
 const Account = connection.models.Account;
+const path = require('path');
 
 const account_register_post = (res,req,next) => {
     const saltHash = genPassword(req.body.password);
@@ -35,11 +36,16 @@ const account_register_post = (res,req,next) => {
 }
 
 const account_login_post = (req,res,next) => {
-    res.redirect('/home');
+  res.redirect('/home');
+}
+
+const account_login_get = (req,res,next) => {
+  res.sendFile(path.join(__dirname, 'src/client/build', 'index.html'));
 }
 
 
 module.exports = {
     account_login_post,
+    account_login_get,
     account_register_post,
 };

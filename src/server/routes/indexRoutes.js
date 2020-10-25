@@ -8,6 +8,7 @@ const indexController = require('../controllers/indexController');
 
 // login
 router.post('/login', passport.authenticate('local'), indexController.account_login_post);
+router.get('/login', passport.authenticate('local'), indexController.account_login_get);
 
 // register route
 router.post('/register', indexController.account_register_post);
