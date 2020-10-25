@@ -29,7 +29,7 @@ class Navbar extends Component {
                ) 
              })}
          </ul> 
-         <Button> Login</Button>
+         {/* <Button> Login</Button> */}
       </nav>
     )
             }
