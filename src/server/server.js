@@ -3,13 +3,13 @@ const app = express();
 const session = require('express-session');
 let passport = require('passport');
 let crypto = require('crypto');
-const { render } = require('ejs');
 const MongoStore = require('connect-mongo')(session);
 const connection = require('./config/database');
+const path = require('path');
 require('dotenv').config();
 
-// view engine (later changed to use REACT)
-app.set('view engine', 'ejs');
+// view engine (REACT Build)
+app.use(express.static(path.join(__dirname, 'src/client/build')));
 
 // PORT
 const PORT = 5000;
@@ -50,11 +50,11 @@ app.use((req, res, next) => {
 /* ----------   ROUTES   ---------- */
 const indexRoutes = require('./routes/indexRoutes');
 const accountRoutes = require('./routes/accountRoutes');
-const homeRoutes = require('./routes/homeRoutes');
+const dashboardRoutes = require('./routes/dashboardRoutes');
 
 app.use('/', indexRoutes);
 app.use('/accounts', accountRoutes);
-app.use('/home', homeRoutes);
+app.use('/dashboard', dashboardRoutes);
 
 // express listen on specified PORT
 app.listen(PORT, () => {
