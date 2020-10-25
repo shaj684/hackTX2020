@@ -4,24 +4,27 @@ import "./App.css";
 import { makeStyles } from '@material-ui/core/styles';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Typography from '@material-ui/core/Typography';
+import DepartLabor from './DepartLabor.png';
+import Logo from './sinclair_college.jpg';
+import NYC from './nyc.png';
 
 const images = [
   {
-    url: '/static/images/grid-list/breakfast.jpg',
+    url: DepartLabor,
     title: 'Department of Labor',
-    width: '40%',
+    width: '34%',
     link: 'https://www.dol.gov/general/topic/training/dislocatedworkers',
   },
   {
-    url: '/static/images/grid-list/burgers.jpg',
+    url: Logo,
     title: 'Sinclair College',
-    width: '30%',
+    width: '33%',
     link: 'https://sinclair.edu/services/graduation-career/displaced-worker-services/financial-assistance/#:~:text=TAA%20is%20a%20federally%20funded%2C%20state%20administered%20program,via%20employer%20petition%20to%20the%20Department%20of%20Labor',
   },
   {
-    url: '/static/images/grid-list/camera.jpg',
+    url: NYC,
     title: 'New York City',
-    width: '30%',
+    width: '33%',
     link: 'https://www1.nyc.gov/site/dca/about/displaced-building-service-workers-protection-act.page#:~:text=Displaced%20Building%20Service%20Workers%20Protection%20Act.%20New%20York,employees%20are%20required%20to%20perform%20building%20service%20work',
   },
 ];
@@ -98,11 +101,6 @@ const useStyles = makeStyles((theme) => ({
     transition: theme.transitions.create('opacity'),
   },
 }));
-
-// https://www.dol.gov/general/topic/training/dislocatedworkers
-// https://sinclair.edu/services/graduation-career/displaced-worker-services/financial-assistance/#:~:text=TAA%20is%20a%20federally%20funded%2C%20state%20administered%20program,via%20employer%20petition%20to%20the%20Department%20of%20Labor.
-// https://www1.nyc.gov/site/dca/about/displaced-building-service-workers-protection-act.page#:~:text=Displaced%20Building%20Service%20Workers%20Protection%20Act.%20New%20York,employees%20are%20required%20to%20perform%20building%20service%20work. 
-
 
 function Resource() {
   
