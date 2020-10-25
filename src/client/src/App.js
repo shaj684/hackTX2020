@@ -6,6 +6,7 @@ import Navbar from "./NavBar/Navbar";
 import Login from "./Login";
 import Register from "./Register";
 import Dashboard from "./Dashboard";
+import MatchingCard from "./MatchingCard";
 
 function App() {
   const [loginUsername, setloginUsername] = useState("");
@@ -39,14 +40,15 @@ function App() {
       <Router>
         <div className="App"> 
           <Navbar />
+          <MatchingCard /> 
           <Switch>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
           </Switch>
         </div>
-      </Router>
-    )
+      </Router> 
+  )
 
   
 

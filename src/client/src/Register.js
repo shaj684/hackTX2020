@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from "react-hook-form";
-import Axios from 'axios';
 
 export default function SignIn() {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
@@ -123,7 +122,7 @@ export default function SignIn() {
 
             <input name="federalAid" type="checkbox" placeholder="false" />
 
-            {errors.federalAid && <p>{errors.federal.message} </p>}
+            {errors.federalAid && <p>{errors.federalAid.message} </p>}
             <div></div>
 
             <input name="timeframe" type="number" placeholder="How many weeks do you plan on staying?" ref={
