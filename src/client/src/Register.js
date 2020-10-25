@@ -1,54 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from "react-hook-form";
-import Axios from 'axios';
 
 export default function SignIn() {
     const {register, handleSubmit, errors } = useForm();
 
-    const [registerUsername, setRegisterUsername] = useState("");
-    const [registerPassword, setRegisterPassword] = useState("");
-    const [registerName, setRegisterName] = useState("");
-    const [registerAge, setRegisterAge] = useState(null);
-    const [registerEmail, setRegisterEmail] = useState("");
-    const [registerPhoneNumber, setRegisterPhoneNumber] = useState("");
-    const [registerPastPosition, setRegisterPastPosition] = useState("");
-    const [registerHomeOwner, setRegisterHomeOwner] = useState(false);
-    const [registerTimeframe, setRegisterTimeframe] = useState(null);
-    const [registerBriggs, setRegisterBriggs] = useState("");
-    const [registerFederalAid, setRegisterFederalAid] = useState(false);
-
     const onSubmit = (data) => {
-        setRegisterUsername(data.username);
-        setRegisterPassword(data.password);
-        setRegisterName(data.name);
-        setRegisterAge(data.age);
-        setRegisterEmail(data.email);
-        setRegisterPhoneNumber(data.phoneNumber);
-        setRegisterPastPosition(data.pastProfession);
-        setRegisterHomeOwner(data.homeOwner);
-        setRegisterTimeframe(data.timeframe);
-        setRegisterBriggs(data.briggs);
-        setRegisterFederalAid(data.federalAid);
-
-        Axios({
-            method: "POST",
-            data: {
-              username: registerUsername,
-              password: registerPassword,
-              name:registerName,
-              age:registerAge,
-              email:registerEmail,
-              phoneNumber:registerPhoneNumber,
-              pastProfession:registerPastPosition,
-              homeOwner:registerHomeOwner,
-              timeframe:registerTimeframe,
-              briggs:registerBriggs,
-              federalAid:registerFederalAid,
-            
-            },
-            withCredentials: true,
-            url: "http://localhost:5000/register",
-          }).then((res) => console.log(res));
+        console.log(data);
     }
 
     return(
@@ -140,15 +97,21 @@ export default function SignIn() {
             <div></div>
 
             <input name="homeOwner" type="checkbox" placeholder="Homeowner?" ref={
+                register({
+                    required: "Home ownership is required",
+                })
             } />
 
             {errors.homeOwner && <p>{errors.homeOwner.message} </p>}
             <div></div>
 
             <input name="federalAid" type="checkbox" placeholder="Have you received federal assistance?" ref={
+                register({
+                    required: "This question is required",
+                })
             } />
 
-            {errors.federalAid && <p>{errors.federal.message} </p>}
+            {errors.federalAid && <p>{errors.federalAid.message} </p>}
             <div></div>
 
             <input name="timeframe" type="number" placeholder="How many weeks do you plan on staying?" ref={
