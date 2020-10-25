@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import {useForm} from "react-hook-form";
+import Axios from 'axios';
 
-export default function SignIn() {
+export default function Register() {
     const proxyurl = "https://cors-anywhere.herokuapp.com/";
     const {register, handleSubmit, errors } = useForm();
 
