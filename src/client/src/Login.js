@@ -9,6 +9,10 @@ export default function SignIn() {
     }
 
     return(
+        <div>
+        <head>
+            <link rel="stylesheet" href="App.css"></link>
+        </head>
         <form onSubmit={handleSubmit(onSubmit)}>
             <input  name="email" type="text" placeholder="Email" ref={
                 register({
@@ -40,5 +44,6 @@ export default function SignIn() {
             {errors.email &&<p>{errors.email.message}</p>}
             {errors.password && <p>{errors.password.message}</p>}
         </form>
+        </div>
     );
 }
