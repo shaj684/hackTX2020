@@ -34,5 +34,6 @@
     ]
   },
   "secure": false,
-  "homepage": "./"
+  "homepage": "./",
+  "proxy":"http://localhost:5000"
 }

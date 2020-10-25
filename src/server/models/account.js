@@ -9,19 +9,19 @@ const accountSchema = new Schema(
     },
     age: {
       type: Number,
-      required: true,
+      required: false,
     },
     email: {
       type: String,
       required: true,
     },
     phoneNumber: {
-      type: Number,
-      required: true,
+      type: String,
+      required: false,
     },
     pastPosition: {
       type: String,
-      required: true,
+      required: false,
     },
     homeOwner: {
       type: Boolean,
