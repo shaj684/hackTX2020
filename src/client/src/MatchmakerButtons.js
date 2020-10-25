@@ -7,19 +7,22 @@ import ClearIcon from '@material-ui/icons/Clear';
 
 
     class Buttons extends React.Component {
+        
+
         render() {
             return (
                 <div>
         <IconButton 
             size="large" 
             aria-label="no"
-            onClick={() => {}}>
+            >
                 <ClearIcon />
         </IconButton>
 
         <IconButton 
             size="large" 
-            aria-label="yes">
+            aria-label="yes"
+            >
                 <CheckIcon />
         </IconButton>
         </div>
