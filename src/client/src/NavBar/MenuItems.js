@@ -16,7 +16,7 @@ export const MenuItems = [
     },
     {
         title: 'Messages', 
-        url: '#', 
+        url: 'https://chat-e0b30.web.app', 
         cName: 'nav-links',
     },
     {
