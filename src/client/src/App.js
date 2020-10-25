@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Axios from 'axios';
 import "./App.css";
 import Navbar from "./NavBar/Navbar";
@@ -42,7 +42,8 @@ function App() {
           <Navbar />
           
           <Switch> 
-             <Route path="/matchMaking" component={MatchingCard}/> 
+            <Route path="/" exact><Redirect to="/dashboard" /></Route>
+            <Route path="/matchMaking" component={MatchingCard}/> 
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
