@@ -43,7 +43,7 @@ const account_login_post = (req,res,next) => {
 }
 
 const match_get = (req,res,next) => {
-  Account.findOne().then((data) => {
+  Account.find({},).then((data) => {
     console.log(data);
     res.send(data);
   })

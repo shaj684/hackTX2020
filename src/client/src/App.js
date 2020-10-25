@@ -7,6 +7,7 @@ import Login from "./Login";
 import Register from "./Register";
 import Dashboard from "./Dashboard";
 import MatchingCard from "./MatchingCard";
+import Resource from "./Resource";
 
 function App() {
   const [loginUsername, setloginUsername] = useState("");
@@ -24,17 +25,6 @@ function App() {
       url: "http://localhost:5000/login",
     }).then((res) => console.log(res));
   };
-
-  const getUser = () => {
-    Axios({
-      method: "GET",
-      withCredentials: true,
-      url: "http://localhost:5000/user",
-    }).then((res) => {
-      setData(res.data);
-      console.log(res.data);
-    });
-  };
   
     return( 
       <Router>
@@ -46,6 +36,7 @@ function App() {
             <Route path="/matchMaking" component={MatchingCard}/> 
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/login" component={Login} />
+            <Route path="/resources" component={Resource} />
             <Route path="/register" component={Register} />
           </Switch>
         </div>

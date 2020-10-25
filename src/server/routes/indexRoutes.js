@@ -16,6 +16,6 @@ router.post('/register', indexController.account_register_post);
 router.get('/register', indexController.account_register_get);
 
 // matchMaking
-router.get('/matchMaking', indexController.match_get);
+router.get('/matchMaking:id', indexController.match_get);
 
 module.exports = router;
