@@ -8,11 +8,15 @@ import Axios from 'axios';
 
 
     class Buttons extends React.Component {
+<<<<<<< HEAD
 
         constructor(props) {
             super(props);
             this.data = {}
         }
+=======
+        
+>>>>>>> 8be3267b02f6b50cf73ac26923c62b96c11e0c1d
 
         render() {
             return (
@@ -42,6 +46,7 @@ import Axios from 'axios';
         <IconButton 
             size="large" 
             aria-label="yes"
+<<<<<<< HEAD
             onClick={() => {
                 Axios({
                   method: "GET",
@@ -58,6 +63,9 @@ import Axios from 'axios';
                 console.log(this.data);
             }}>
                 
+=======
+            >
+>>>>>>> 8be3267b02f6b50cf73ac26923c62b96c11e0c1d
                 <CheckIcon />
         </IconButton>
         </div>

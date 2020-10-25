@@ -6,17 +6,17 @@ export const MenuItems = [
     },
     {
         title: 'Resources', 
-        url: '#', 
+        url: 'resources', 
         cName: 'nav-links',
     },
     {
         title: 'Matchmaking', 
-        url: 'matchmaking', 
+        url: 'matchMaking', 
         cName: 'nav-links',
     },
     {
         title: 'Messages', 
-        url: '#', 
+        url: 'https://chat-e0b30.web.app', 
         cName: 'nav-links',
     },
     {
